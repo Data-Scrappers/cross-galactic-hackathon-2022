@@ -37,9 +37,15 @@ Logistic regression training was carried out on preprocessed data (using the met
 
 **LSTM**
 
-The LSTM architecture for the SWaT dataset includes encoder and decoder blocks with a set of hyperparameters optimized for the dataset.
+LSTMs are commonly used for time series regression and classification tasks.
+Therefore we are also using the simple model to predict, if a stand is under attack.
 
-As a training dataset, we use a part of the SwaT dataset generated under normal operating conditions, without the presence of attacks. The rest of the dataset, which includes changes in sensor parameters under the influence of attacks, is used as a test dataset.
+However it is challenging to split dataset into training and testing,
+since we have to be time consistant.
 
-| **Metrics** | **Score** |
-| --- | --- |
+Therefore we use propose to take 4 'Normal' days and one day
+with 'Attack' events.
+Validate on remaining 2 days with 'Attack' events.
+
+After training will be finished, we will compare results with our MVP (Logistic regression).
+
