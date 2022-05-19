@@ -3,6 +3,7 @@ https://new.skillfactory.ru/hackaton
 
 
 Data: https://drive.google.com/drive/u/2/folders/1H8yi4g8SfOYWdltp3PFRAKEyusuoqPv-
+
 **Attack Detection for SWaT Dataset using ML methods and Recurrent Neural Networks.**
 
 As part of this educational hackathon, our team analyzed the work of various methods for the SWaT dataset. The results of the study are presented below.
