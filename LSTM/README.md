@@ -1,17 +1,39 @@
-LSTMs are commonly used for time series regression and classification
+**LSTMs** are commonly used for time series regression and classification
 tasks.
-Therefore we are also using the simple model
+Therefore, we are also using the simple model
 to predict, if a stand is under attack.
 
-However it is challenging to split dataset into training and testing,
-since we have to be time consistant.
+### First part is data preprocessing:
+1. Delete invalid data, convert timestamps, scale numerical data
+2. Remove first five hours (stabilization part)
+3. Split to train, test and validation datasets:
+    * Train: from 2015-12-28 10:29:14 until 2016-01-02 13:41:11
+    * Validation: from 2015-12-30 12:00:00 until 2016-1-1 11:59:59
+    * Test: from 2016-1-1 12:00:00 until 2016-01-02 14:59:59
 
-Therefore we use propose to take 4 'Normal' days and one day
-with 'Attack' events.
-Validate on remaining 2 days with 'Attack' events.
+
+### Model
+ShallowRegressionLSTM consists of PyTorch LSTM layer and single
+linear layer at output.
+
+### Train
+There are two strategies:
+1. Train on all features and predict probability of attack (we can then tune threshold
+in order to be more sensitive)
+2. Predict 'LIT301' sensor values based only on actuators states
+and compare with actual value. Later this approach can be extrapolated
+on all sensors outputs. 'Attack' flag will be raised
+if actual measured value is deviated from predicted one for several timestamps.
 
 
-Links that might be useful for future improvements:
+### Bottleneck
+Even one LSTM layer requires a lot of time to train.
+Therefore, it was hard to experiment and test different settings.
+
+
+---
+
+#### Links that might be useful for future improvements:
 
 1. PyTorch multivariate time series anomaly detection
 https://github.com/KurochkinAlexey/ConvRNN/blob/master/ConvRNN_SML2010.ipynb
