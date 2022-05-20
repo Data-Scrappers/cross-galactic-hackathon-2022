@@ -20,7 +20,7 @@ linear layer at output.
 There are two strategies:
 1. Train on all features and predict probability of attack (we can then tune threshold
 in order to be more sensitive)
-2. Predict 'LIT301' sensor values based only on actuators states
+2. Train to predict 'LIT301' sensor values based only on actuators states using only 'Normal' data
 and compare with actual value. Later this approach can be extrapolated
 on all sensors outputs. 'Attack' flag will be raised
 if actual measured value is deviated from predicted one for several timestamps.
