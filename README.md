@@ -33,6 +33,10 @@ Logistic regression training was carried out on preprocessed data (using the met
 
 | **Metrics** | **Score** |
 | -----------| --------- |
+| **Accuracy**| **0.938**  |
+| **Precision** | **0.953** |
+| **Recall** | **0.894** |
+| **F1-score** | **0.923** |
 
 
 **LSTM**
