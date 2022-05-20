@@ -16,6 +16,15 @@ We have chosen 3 methods for the analysis of anomalies:
 2. Decision tree and gradient boosting (XGBoost)
 3. Recurrent neural network (LSTM)
 
+Repository structure:
+
+1. LSTM
+Folder with LSTM notebook and py files with model and dataloader.
+2. Initial_data_uploading + XGboost test.ipynb
+Notebook with data preprocessing and classification using **XGboost**
+3. hackaton_logistic_regression.ipynb
+**MVP** for this project. Contains data preprocessing and classification using **Logistic Regression**.
+
 Below are descriptions of the use of each of the methods and the results obtained.
 
 **Logistic regression**
@@ -38,18 +47,4 @@ Logistic regression training was carried out on preprocessed data (using the met
 | **Recall** | **0.894** |
 | **F1-score** | **0.923** |
 
-
-**LSTM**
-
-LSTMs are commonly used for time series regression and classification tasks.
-Therefore we are also using the simple model to predict, if a stand is under attack.
-
-However it is challenging to split dataset into training and testing,
-since we have to be time consistant.
-
-Therefore we use propose to take 4 'Normal' days and one day
-with 'Attack' events.
-Validate on remaining 2 days with 'Attack' events.
-
-After training will be finished, we will compare results with our MVP (Logistic regression).
 
