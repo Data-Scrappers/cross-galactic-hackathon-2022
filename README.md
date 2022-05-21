@@ -39,6 +39,7 @@ Logistic regression training was carried out on preprocessed data (using the met
 | **F1-score** | **0.82** |
 
 **XGBoost**
+As part of the data preprocessing before training the model, spaces in the column names were eliminated, and duplicates were removed to avoid data leakage into the training sample. The sample was split into train/test using stratify. After the first prediction, we got overfitting, from which it was concluded that a random data split is not the best option for working with this type of data. Thus, we decided to make a timesplit, while the dataset was presented as a time series, which made it possible to avoid overfitting and get better scores (accuracy - 0.93, f1_score - 0.92).
 
 | **Metrics** | **Score** |
 | -----------| --------- |
